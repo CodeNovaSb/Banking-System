@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap");
+
+:root {
+  --hero-ink: #0e2430;
+  --hero-muted: #48606d;
+  --hero-surface: #f7fbff;
+  --hero-primary: #005b99;
+  --hero-primary-strong: #004779;
+  --hero-accent: #16a085;
+
+  --bs-primary: #005b99;
+  --bs-primary-rgb: 0, 91, 153;
+  --bs-success: #158f77;
+  --bs-success-rgb: 21, 143, 119;
+  --bs-danger: #cf3f32;
+  --bs-warning: #c58a00;
+  --bs-info: #117a8b;
+  --bs-secondary: #5f7480;
+  --bs-body-color: #0e2430;
+  --bs-body-bg: #f1f8ff;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--hero-ink);
+  background:
+    radial-gradient(950px 620px at 8% 22%, rgba(22, 160, 133, 0.12), transparent 70%),
+    radial-gradient(900px 620px at 92% 76%, rgba(0, 91, 153, 0.14), transparent 70%),
+    linear-gradient(135deg, #eef8ff 0%, #f9fffd 100%);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.app-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14, 36, 48, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 36, 48, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar.bg-primary {
+  background: linear-gradient(135deg, #014f86 0%, #05668d 100%) !important;
+  box-shadow: 0 8px 22px rgba(0, 65, 109, 0.25);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(14, 36, 48, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 25px rgba(14, 36, 48, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.card-header {
+  background: rgba(247, 251, 255, 0.88);
+  border-bottom-color: rgba(14, 36, 48, 0.08);
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(0, 91, 153, 0.03);
+  --bs-table-hover-bg: rgba(0, 91, 153, 0.06);
+}
+
+.table-light,
+.table > :not(caption) > * > .table-light {
+  --bs-table-bg: rgba(0, 91, 153, 0.08);
+  color: #0a2738;
+}
+
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  border: none;
+  background: linear-gradient(135deg, var(--hero-primary) 0%, var(--hero-primary-strong) 100%);
+  box-shadow: 0 10px 20px rgba(0, 91, 153, 0.2);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #01508a 0%, #003c66 100%);
+}
+
+.btn-outline-primary {
+  border-color: rgba(0, 91, 153, 0.45);
+  color: var(--hero-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: rgba(0, 91, 153, 0.08);
+  color: #004779;
+}
+
+.nav-tabs {
+  border-bottom-color: rgba(14, 36, 48, 0.12);
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  color: #335261;
+  border-radius: 12px 12px 0 0;
+  font-weight: 700;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: rgba(0, 91, 153, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.nav-tabs .nav-link.active {
+  color: #004f83;
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(0, 91, 153, 0.18) rgba(0, 91, 153, 0.18) transparent;
+}
+
+.alert {
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(14, 36, 48, 0.1);
+  border-radius: 16px;
+}
+
+.role-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(14, 36, 48, 0.08);
+  box-shadow: 0 12px 24px rgba(14, 36, 48, 0.1);
+}
+
+.role-banner::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  right: -52px;
+  top: -80px;
+  opacity: 0.28;
+}
+
+.role-banner-title {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.15rem, 2.8vw, 1.7rem);
+}
+
+.role-banner-subtitle {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.role-banner-admin {
+  background: linear-gradient(135deg, #014f86 0%, #0b6d8f 100%);
+  color: #ffffff;
+}
+
+.role-banner-admin::after {
+  background: linear-gradient(135deg, #8bd3ff 0%, #1ed5b8 100%);
+}
+
+.role-banner-employee {
+  background: linear-gradient(135deg, #015f7a 0%, #168f77 100%);
+  color: #ffffff;
+}
+
+.role-banner-employee::after {
+  background: linear-gradient(135deg, #87f2d0 0%, #8fd7ff 100%);
+}
+
+.role-banner-customer {
+  background: linear-gradient(135deg, #1f6f50 0%, #0f8c6d 100%);
+  color: #ffffff;
+}
+
+.role-banner-customer::after {
+  background: linear-gradient(135deg, #b2f7ef 0%, #83e7c2 100%);
+}
+
+@media (max-width: 768px) {
+  .app-page::before {
+    background-size: 32px 32px;
+  }
+}

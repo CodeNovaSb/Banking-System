@@ -1,0 +1,73 @@
+erDiagram
+    CUSTOMERS {
+        int customer_id PK
+        varchar name
+        date dob
+        varchar gender
+        varchar phone UK
+        varchar email UK
+        text address
+    }
+
+    BRANCHES {
+        int branch_id PK
+        varchar branch_name
+        varchar city
+    }
+
+    ACCOUNTS {
+        int account_id PK
+        int customer_id FK
+        int branch_id FK
+        varchar account_type
+        decimal balance
+        date created_date
+    }
+
+    TRANSACTIONS {
+        int transaction_id PK
+        int account_id FK
+        varchar transaction_type
+        decimal amount
+        datetime transaction_date
+    }
+
+    EMPLOYEES {
+        int employee_id PK
+        varchar name
+        varchar role
+        int branch_id FK
+        decimal salary
+    }
+
+    LOANS {
+        int loan_id PK
+        int customer_id FK
+        varchar loan_type
+        decimal amount
+        decimal interest_rate
+        date start_date
+    }
+
+    PAYMENTS {
+        int payment_id PK
+        int account_id FK
+        varchar payment_type
+        decimal amount
+        date payment_date
+    }
+
+    CARDS {
+        int card_id PK
+        int account_id FK
+        varchar card_type
+        date expiry_date
+    }
+
+    CUSTOMERS ||--o{ ACCOUNTS : "has"
+    BRANCHES ||--o{ ACCOUNTS : "belongs to"
+    BRANCHES ||--o{ EMPLOYEES : "works at"
+    ACCOUNTS ||--o{ TRANSACTIONS : "has"
+    ACCOUNTS ||--o{ PAYMENTS : "has"
+    ACCOUNTS ||--o{ CARDS : "has"
+    CUSTOMERS ||--o{ LOANS : "takes"
